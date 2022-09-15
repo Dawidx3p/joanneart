@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { data } from '../../utils/data';
 import Head from 'next/head';
 import styles from '../../styles/Home.module.scss';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import Imgs from '../../components/Imgs';
 
 function QuestionDetail() {
