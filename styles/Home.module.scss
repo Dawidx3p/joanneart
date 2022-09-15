@@ -116,7 +116,12 @@ main.homepage{
   width: 60vw;
   h1{
   margin-bottom: 1rem;
-}}
+  }
+  article h2{
+    font-size: 50px;
+  }
+
+}
 
 .photoArticle{
   display: grid;
@@ -178,6 +183,43 @@ main.homepage{
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
 }
+
+.titleImg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  object-position: right;
+  z-index: -1;
+}
+.imageSection{
+  background-color: #242424;
+  display: grid;
+  grid-auto-flow: column;
+  button{
+    background: none;
+    border: none;
+    height: 80px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #FFF;
+  }
+  .image{
+    height: 100vh;
+    width: 100%;
+    object-fit: contain;
+    justify-self: center;
+  }
+  .ImageComments{
+    width: 350px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    justify-self: flex-end;
+  }
+}
+
 
 @keyframes init{
   0%{

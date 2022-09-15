@@ -8,7 +8,7 @@ import Imgs from '../../components/Imgs';
 function QuestionDetail() {
   const router = useRouter();
   const { id } = router.query;
-  const article = useMemo(() => data.fotografia.find(obj => obj.id === id), [id]);
+  const article = useMemo(() => data.malarstwo.find(obj => obj.id === id), [id]);
   const divider = (arr) => {
     let id = 0;
     let arrayOfImgs = [];
@@ -54,6 +54,7 @@ function QuestionDetail() {
             </div>
             <section>
                 {typeof article.img[0] === 'object' && article.img.map((arr, id) => <Imgs key={id} arr={arr} id={id} article={article}/>)}
+                {typeof article.img === 'string' && <img src={article.img} className={styles.titleImg} alt="title image" />}
             </section>
             </>}
             

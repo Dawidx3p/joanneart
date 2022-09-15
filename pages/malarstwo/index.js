@@ -5,22 +5,22 @@ import styles from '../../styles/Home.module.scss';
 import { data } from '../../utils/data';
 
 export default function Fotografia() {
-  const [category, setCategory] = useState('Artystyczna');
+  const [category, setCategory] = useState('Murale');
   console.log(JSON.stringify(data.fotografia[0].img))
   return (
     <div className={styles.container}>
       <Head>
-        <title>Fotografia Joanneart</title>
+        <title>Malarstwo Joanneart</title>
         <meta name="description" content="Strona na której dziele się z innymi swoją pasją" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className={styles.fotografia}>
         <div className={styles.description}>
-          <h1>Fotografia</h1>
+          <h1>Malarstwo</h1>
           <div className={styles.underline}></div>
           <p>kategoria: {category}</p>
         </div>
-        {data.fotografia.map(article => <article className={styles.article}>
+        {data.malarstwo.map(article => <article className={styles.article}>
           <h2>{article.title}</h2>
           <p>{article.date}</p>
           <p>{article.description}</p>
