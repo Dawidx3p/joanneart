@@ -20,7 +20,7 @@ export default function Fotografia() {
           <div className={styles.underline}></div>
           <p>kategoria: {category}</p>
         </div>
-        {data.fotografia.map(article => <article className={styles.article}>
+        {data.fotografia.map((article, id) => <article key={id} className={styles.article}>
           <h2>{article.title}</h2>
           <p>{article.date}</p>
           <p>{article.description}</p>
