@@ -22,6 +22,11 @@ function QuestionDetail() {
   }, [])
   return (
     <>
+    {article && article.title && article.description && <Head>
+      <title>{article.title}</title>
+      <meta name="description" content={article.description} />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>}
     <main className={styles.photoArticle}>
       {article && article.title && article.description && <>
       <div className={styles.description}>
@@ -37,6 +42,7 @@ function QuestionDetail() {
       </>}
     </main>
     <CommentSection id={id} refreshUserLikes={refreshUserLikes} userLikes={userLikes} />
+    {id && <div className={styles.share}><button onClick={() => navigator.share({url: router.pathname.substring(0,router.pathname.length-4)+id})}>Udostępnij</button></div>}
     </>
     
   );

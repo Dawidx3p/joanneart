@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import Navigation from '../../components/Navigation';
 import styles from '../../styles/Home.module.scss';
 import { data } from '../../utils/data';
 
@@ -14,6 +15,7 @@ export default function Fotografia() {
         <meta name="description" content="Strona na której dziele się z innymi swoją pasją" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Navigation active={'malarstwo'}/>
       <section className={styles.fotografia}>
         <div className={styles.description}>
           <h1>Malarstwo</h1>

@@ -1,10 +1,12 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.scss';
 import { createLike, getCommentsBySession, getLikesById, likeImage, likeIt, addLikeToCache } from '../utils/api';
 import CommentForm from './CommentForm';
 
-export default function ImageComments({id, userLikes, refreshUserLikes}){
+export default function ImageComments({id, userLikes, refreshUserLikes, id2}){
+    const router = useRouter();
     const [comments, setComments] = useState([]);
     const [likes, setLikes] = useState();
     const [disabled, setDisabled] = useState(false);
@@ -80,6 +82,7 @@ export default function ImageComments({id, userLikes, refreshUserLikes}){
             </div>) : null}
             {message}
             <CommentForm id={id} refresh={refresh}/>
+            {id && <div className={styles.share}><button onClick={() => navigator.share({url: router.pathname.substring(0,router.pathname.length-4)+id2})}>Udostępnij</button></div>}
         </div>
     )
 }

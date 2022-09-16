@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link';
 import { useState } from 'react'
+import Navigation from '../components/Navigation';
 import styles from '../styles/Home.module.scss'
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.homepage}>
+        <Navigation active={'strona_glowna'}/>
         <img src="/logo.svg" alt="logo" id={styles.logo}/>
         <section className={styles.container}>
           <div className={styles.description}>

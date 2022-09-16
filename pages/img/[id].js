@@ -19,10 +19,16 @@ function QuestionDetail() {
   }, [])
   return (
     <>
+    <Head>
+      <title>Zdjęcie Joanneart</title>
+      <meta name="description" content="Zdjęcie zrobione przez Joanne Dębiec z Joanneart" />
+      <meta property="og:image" content={id.slice(3).replaceAll('+', '/')}></meta>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
     {id && <section className={styles.imageSection}>
         <button className={styles.close} onClick={() => router.back()}>X</button>
         <img className={styles.image} src={id.slice(3).replaceAll('+', '/')} alt="main image" />
-        <ImageComments refreshUserLikes={refreshUserLikes} userLikes={userLikes} id={id.slice(3).replaceAll('+', '/')}/>
+        <ImageComments refreshUserLikes={refreshUserLikes} userLikes={userLikes} id2={id} id={id.slice(3).replaceAll('+', '/')}/>
     </section>}
     </>
   );

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import Navigation from '../../components/Navigation';
 import styles from '../../styles/Home.module.scss';
 import { data } from '../../utils/data';
 
@@ -15,6 +16,7 @@ export default function Fotografia() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className={styles.fotografia}>
+        <Navigation active={'fotografia'}/>
         <div className={styles.description}>
           <h1>Fotografia</h1>
           <div className={styles.underline}></div>
