@@ -283,7 +283,7 @@ justify-items: center;
   .close{
     background: none;
     border: none;
-    height: 80px;
+    height: 70px;
     cursor: pointer;
     font-size: 20px;
     color: #FFF;
@@ -293,6 +293,11 @@ justify-items: center;
     width: 100%;
     object-fit: contain;
     justify-self: center;
+    @media only screen and (max-width: 800px) {
+      &{
+        height: 80vh;
+      }
+    }
   }
   .ImageComments{
     padding:  2rem;
