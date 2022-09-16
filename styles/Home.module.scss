@@ -24,6 +24,21 @@
       width: 250px;
       height: 250px;
     }
+    @media only screen and (max-width: 800px) {
+      &{
+        width: 150px;
+        height: 150px;
+      }
+      &.active{
+        width: 160px;
+        height: 160px;
+      }
+      &.activeGoup{
+        margin-top: -6rem;
+        width: 160px;
+        height: 160px;
+      }
+    }
   }
   .container2{
     grid-column-end: span 2;
@@ -43,6 +58,11 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 7vw;
+  @media only screen and (max-width: 1200px) {
+    &{
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 .underline{
@@ -120,7 +140,11 @@ main.homepage{
   article h2{
     font-size: 50px;
   }
-
+  @media only screen and (max-width: 800px) {
+    &{
+      width: 90vw;
+    }
+  }
 }
 
 .photoArticle{
@@ -129,6 +153,11 @@ main.homepage{
   grid-template-columns: repeat(2, 1fr);
   padding: 10vh 10vw;
   gap: 3rem;
+  @media only screen and (max-width: 1400px) {
+    &{
+      grid-template-columns: 1fr;
+    }
+  }
   .description{
     display: grid;
     grid-template-columns: 1fr 2fr;

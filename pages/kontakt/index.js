@@ -7,11 +7,11 @@ export default function Kontakt() {
   const [category, setCategory] = useState('Murale');
   return (
     <div className={styles.containerContact}>
-      {/* <Head>
-          <title>{article.title}</title>
-          <meta name="description" content={article.description} />
-          <link rel="icon" href="/favicon.ico" />
-        </Head> */}
+      <Head>
+        <title>Joanneart Kontakt</title>
+        <meta name="description" content="Strona na której dziele się z innymi swoją pasją" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Navigation active={'kontakt'}/>
       <section className={styles.profile}>
         <img src="/profile.png" alt="Profile" />
