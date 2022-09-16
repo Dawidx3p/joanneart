@@ -100,6 +100,11 @@ main.homepage{
   z-index: -1;
   opacity: 0;
   animation: init 0.7s ease-out 0.4s forwards;
+  @media only screen and (max-width: 800px) {
+    &{
+      display: none;
+    }
+  }
 }
 
 .description{
