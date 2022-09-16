@@ -96,7 +96,7 @@ function QuestionDetail() {
         refreshUserLikes={refreshUserLikes}
         userLikes={userLikes}
       />
-      {id && (
+      {/* {id && (
         <div className={styles.share}>
           <button
             onClick={() =>
@@ -109,7 +109,7 @@ function QuestionDetail() {
             Udostępnij
           </button>
         </div>
-      )}
+      )} */}
     </>
   );
 }

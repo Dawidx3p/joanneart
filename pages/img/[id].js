@@ -26,10 +26,10 @@ function QuestionDetail() {
           name="description"
           content="Zdjęcie zrobione przez Joanne Dębiec z Joanneart"
         />
-        <meta
+        {/* <meta
           property="og:image"
           content={id.slice(3).replaceAll("+", "/")}
-        ></meta>
+        ></meta> */}
         <link rel="icon" href="/favicon.ico" />
       </Head>}
       {id && (

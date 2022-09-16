@@ -119,7 +119,7 @@ export default function ImageComments({
       <CommentForm id={id} refresh={refresh} />
       {id && (
         <div className={styles.share}>
-          <button
+          {/* <button
             onClick={() =>
               navigator.share({
                 url:
@@ -128,7 +128,7 @@ export default function ImageComments({
             }
           >
             Udostępnij
-          </button>
+          </button> */}
         </div>
       )}
     </div>
