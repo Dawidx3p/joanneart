@@ -7,7 +7,7 @@ export default function Kontakt() {
   const [category, setCategory] = useState('Murale');
   return (
     <div className={styles.containerContact}>
-      {/* <Head>
+      <Head>
         <title>Joanneart Kontakt</title>
         <meta name="description" content="Strona na której dziele się z innymi swoją pasją" />
         <link rel="icon" href="/favicon.ico" />
@@ -24,7 +24,7 @@ export default function Kontakt() {
             <a href='https://www.instagram.com/joannart_heart/'><img src="/svg/instagram.svg" alt="instagram" /></a>
         </div>
         <p>e-mail: <a href='mailto:daridebiec@gmail.com'>daridebiec@gmail.com</a></p>
-      </section> */}
+      </section>
     </div>
   )
 }
