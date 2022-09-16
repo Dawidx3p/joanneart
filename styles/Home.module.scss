@@ -26,17 +26,20 @@
     }
     @media only screen and (max-width: 800px) {
       &{
-        width: 150px;
-        height: 150px;
+        width: 140px;
+        height: 140px;
       }
       &.active{
-        width: 160px;
-        height: 160px;
+        width: 140px;
+        height: 140px;
+      }
+      &.goup{
+        margin-top: -4.5rem;
       }
       &.activeGoup{
-        margin-top: -6rem;
-        width: 160px;
-        height: 160px;
+        margin-top: -4.5rem;
+        width: 140px;
+        height: 140px;
       }
     }
   }
