@@ -124,6 +124,7 @@ main.homepage{
 }
 
 .photoArticle{
+  min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 10vh 10vw;
@@ -173,10 +174,10 @@ main.homepage{
 }
 
 .imgs3{
-  display: grid;
-  grid-column-end: span 4;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
+display: grid;
+grid-column-end: span 4;
+grid-template-columns: repeat(3, 1fr);
+justify-items: center;
 }
 .imgs4{
   display: grid;
@@ -188,17 +189,18 @@ main.homepage{
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   object-fit: contain;
   object-position: right;
   z-index: -1;
 }
+
 .imageSection{
   background-color: #242424;
   display: grid;
   grid-auto-flow: column;
-  button{
+  .close{
     background: none;
     border: none;
     height: 80px;
@@ -213,13 +215,134 @@ main.homepage{
     justify-self: center;
   }
   .ImageComments{
+    padding:  2rem;
     width: 350px;
     height: 100vh;
     background-color: #FFFFFF;
     justify-self: flex-end;
+    .likes{
+      display: inline-flex;
+      align-items: center;
+      span{
+        margin-left: 0.5rem;
+      }
+      img{
+        cursor: pointer;
+      }
+    }
+    .likeit{
+      font-family: 'Montserrat', sans-serif;
+      display: grid;
+      background: none;
+      border: none;
+      justify-content: left;
+      cursor: pointer;
+    }
+    .commentContainer{
+      margin: 1rem 0;
+    }
+  }
+  .comment{
+    font-family: 'Montserrat', sans-serif;
+    color: #3A3A3A;
+    margin: 0.3rem;
+    background-color: #EEEEEE;
+    padding: 0.7rem;
+    border-radius: 0 14px 14px 14px;
+    .author{
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+  }
+  .commentLikes{
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    div{
+      display: inline-flex;
+      justify-content: flex-end;
+      img{
+        margin: 0 0.4rem;
+      }
+    }
   }
 }
 
+.noStyle{
+  background: none;
+  border: none;
+}
+
+.commentForm{
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.1rem;
+  textarea{
+    resize: none;
+  }
+  input[type="submit"]{
+    border: none;
+    background-color: #303030;
+    color: #ECECEC;
+    padding: 0.4rem;
+    &:disabled{
+      background: none;
+      color: #303030;
+    }
+  }
+}
+
+.commentSection{
+  background: #fff;
+  padding: 3rem;
+  .likes{
+    display: inline-flex;
+    align-items: center;
+    span{
+      margin-left: 0.5rem;
+    }
+    img{
+      cursor: pointer;
+    }
+  }
+  .likeit{
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    background: none;
+    border: none;
+    justify-content: left;
+    cursor: pointer;
+  }
+  .commentContainer{
+    margin: 1rem 0;
+  }
+  .comment{
+    font-family: 'Montserrat', sans-serif;
+    color: #3A3A3A;
+    margin: 0.3rem;
+    background-color: #EEEEEE;
+    padding: 0.7rem;
+    border-radius: 0 14px 14px 14px;
+    .author{
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+  }
+  .commentLikes{
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    div{
+      display: inline-flex;
+      justify-content: flex-end;
+      img{
+        margin: 0 0.4rem;
+      }
+    }
+  }
+}
 
 @keyframes init{
   0%{

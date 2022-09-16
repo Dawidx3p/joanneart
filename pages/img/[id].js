@@ -2,18 +2,27 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import styles from '../../styles/Home.module.scss';
 import ImageComments from '../../components/ImageComments';
+import { useEffect, useState } from 'react';
+import { getLikes } from '../../utils/api';
 
 function QuestionDetail() {
+  const [userLikes, setLikes] = useState([]);
   const router = useRouter();
   const { id } = router.query;
-  console.log(id);
-  
+  const refreshUserLikes = async () => getLikes().then(likes => {
+    setLikes(likes);
+  })
+  useEffect(() => {
+    getLikes().then(likes => {
+      setLikes(likes)
+    })
+  }, [])
   return (
     <>
     {id && <section className={styles.imageSection}>
-        <button onClick={() => router.back()}>X</button>
+        <button className={styles.close} onClick={() => router.back()}>X</button>
         <img className={styles.image} src={id.slice(3).replaceAll('+', '/')} alt="main image" />
-        <ImageComments id={id.slice(3).replaceAll('+', '/')}/>
+        <ImageComments refreshUserLikes={refreshUserLikes} userLikes={userLikes} id={id.slice(3).replaceAll('+', '/')}/>
     </section>}
     </>
   );

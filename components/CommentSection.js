@@ -34,7 +34,7 @@ export default function ImageComments({id, userLikes, refreshUserLikes}){
         });
 };
     return(
-        <div className={styles.ImageComments}>
+        <div className={styles.commentSection}>
             <section className={styles.likes}>
                 <button className={styles.noStyle} onClick={() => {
                     if(userLikes.includes(id)){
@@ -46,9 +46,7 @@ export default function ImageComments({id, userLikes, refreshUserLikes}){
                     addLikeToCache([...userLikes, id]).then(refreshUserLikes())
                     if(!likes){
                         return createLike(id).then(like => {
-                            if(like){
-                                setLikes(like)
-                            }
+                            setLikes(like)
                         })
                     }else{
                         likeImage(likes)
