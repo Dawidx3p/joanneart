@@ -101,7 +101,6 @@ main.homepage{
   animation: init 0.7s ease-out forwards;
   p{
     padding-bottom: 1rem;
-
   }
   a{
     font-family: 'Montserrat', sans-serif;
@@ -153,7 +152,7 @@ main.homepage{
   grid-template-columns: repeat(2, 1fr);
   padding: 10vh 10vw;
   gap: 3rem;
-  @media only screen and (max-width: 1400px) {
+  @media only screen and (max-width: 1600px) {
     &{
       grid-template-columns: 1fr;
     }
@@ -188,6 +187,18 @@ main.homepage{
       clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     }
   }
+  @media only screen and (max-width: 1000px) {
+    &{
+      .description{
+        h1{
+          font-size: 10rem;
+        }
+        h2{
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
 }
 
 .imgs3, .imgs4{
@@ -198,6 +209,24 @@ main.homepage{
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     &.goup{
       margin-top: -6rem;
+    }
+    @media only screen and (max-width: 1000px) {
+      &{
+        width: 140px;
+        height: 140px;
+        &.goup{
+          margin-top: -3rem;
+        }
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      &{
+        width: 80px;
+        height: 80px;
+        &.goup{
+          margin-top: -1rem;
+        }
+      }
     }
   }
 }
@@ -293,6 +322,15 @@ justify-items: center;
       justify-content: flex-end;
       img{
         margin: 0 0.4rem;
+      }
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    &{
+      grid-auto-flow: row;
+      .ImageComments{
+        width: 100%;
+        height: auto;
       }
     }
   }
