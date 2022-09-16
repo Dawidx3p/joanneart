@@ -15,7 +15,7 @@ export default function Kontakt() {
       <Navigation active={'kontakt'}/>
       <section className={styles.profile}>
         <img src="/profile.png" alt="Profile" />
-        <p>Jest we mnie piękna, ciekawa świata istota o bogatej wyobraźni, która swoim uśmiechem i "magią rąk" sprawia, że świat nabiera barw...a ja ją biorę z miłością za rękę i malujemy, fotografujemy, sprawiając radość i zmieniając świat.</p>
+        <p>Jest we mnie piękna, ciekawa świata istota o bogatej wyobraźni, która swoim uśmiechem i magią rąk sprawia, że świat nabiera barw...a ja ją biorę z miłością za rękę i malujemy, fotografujemy, sprawiając radość i zmieniając świat.</p>
       </section>
       <section className={styles.social}>
         <h1>Social Media</h1>
