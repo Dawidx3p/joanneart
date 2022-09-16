@@ -25,7 +25,7 @@ export default function Kontakt() {
           i zmieniając świat.
         </p>
       </section>
-      <section className={styles.social}>
+      {/* <section className={styles.social}>
         <h1>Social Media</h1>
         <div>
           <a href="https://www.facebook.com/search/top?q=joanneart">
@@ -39,7 +39,7 @@ export default function Kontakt() {
           e-mail:{" "}
           <a href={"mailto:daridebiec@gmail.com"}>daridebiec@gmail.com</a>
         </p>
-      </section>
+      </section> */}
     </div>
   );
 }
