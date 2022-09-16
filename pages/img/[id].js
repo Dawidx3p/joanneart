@@ -20,7 +20,7 @@ function QuestionDetail() {
   }, []);
   return (
     <>
-      <Head>
+      {id && <Head>
         <title>Zdjęcie Joanneart</title>
         <meta
           name="description"
@@ -31,7 +31,7 @@ function QuestionDetail() {
           content={id.slice(3).replaceAll("+", "/")}
         ></meta>
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </Head>}
       {id && (
         <section className={styles.imageSection}>
           <button className={styles.close} onClick={() => router.back()}>
