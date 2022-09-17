@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import Imgs from "../../components/Imgs";
 import CommentSection from "../../components/CommentSection";
 import { getLikes } from "../../utils/api";
+import Navigation from "../../components/Navigation";
 
 function QuestionDetail() {
   const [userLikes, setLikes] = useState([]);
@@ -65,6 +66,7 @@ function QuestionDetail() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
       )}
+      <Navigation active={'malarstwo'}/>
       <main className={styles.photoArticle}>
         {article && article.title && article.description && (
           <>

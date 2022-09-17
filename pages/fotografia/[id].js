@@ -6,6 +6,8 @@ import { useEffect, useMemo, useState } from "react";
 import Imgs from "../../components/Imgs";
 import CommentSection from "../../components/CommentSection";
 import { getLikes } from "../../utils/api";
+import MobileImg from "../../components/MobileImg";
+import Navigation from "../../components/Navigation";
 
 function QuestionDetail() {
   const [userLikes, setLikes] = useState([]);
@@ -33,6 +35,7 @@ function QuestionDetail() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
       )}
+      <Navigation active={'fotografia'}/>
       <main className={styles.photoArticle}>
         {article && article.title && article.description && (
           <>
@@ -48,6 +51,13 @@ function QuestionDetail() {
                 article.img.map((arr, id) => (
                   <Imgs key={id} arr={arr} id={id} article={article} />
                 ))}
+              {typeof article.imgSmall[0] === "object" &&
+                <section className={styles.mobileImgContainer}>
+                  {article.imgSmall.map((arr, id) => (
+                  <MobileImg key={id} arr={arr} id={id} article={article} />
+                ))}
+                </section>
+                }
             </section>
           </>
         )}
