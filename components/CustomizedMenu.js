@@ -82,7 +82,7 @@ export default function CustomizedMenu({ changeCategory, options }) {
         open={open}
         onClose={handleClose}
       >
-        {options && options.map(option => <MenuItem onClick={() => handleClose(option)} disableRipple>
+        {options && options.map((option, id) => <MenuItem key={id} onClick={() => handleClose(option)} disableRipple>
             {option}
         </MenuItem>)}
       </StyledMenu>

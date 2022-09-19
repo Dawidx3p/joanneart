@@ -15,7 +15,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Joanneart</title>
-        <meta name="description" content="Strona na której dziele się z innymi swoją pasją" />
+        <meta name="description" content="Cześć, jestem Joanna Dębiec, a to strona na której dziele się z wami swoją pasją" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.homepage}>

@@ -20,8 +20,8 @@ export default function Kontakt() {
       <section className={styles.social}>
         <h1>Social Media</h1>
         <div>
-            <a target="_blank" rel="noopener" href='https://www.facebook.com/profile.php?id=100063691398351'><img src="/svg/facebook.svg" alt="facebook" /></a>
-            <a target="_blank" rel="noopener" href='https://www.instagram.com/joannart_heart/'><img src="/svg/instagram.svg" alt="instagram" /></a>
+            <a target="_blank" rel="noopener noreferrer" href='https://www.facebook.com/profile.php?id=100063691398351'><img src="/svg/facebook.svg" alt="facebook" /></a>
+            <a target="_blank" rel="noopener noreferrer" href='https://www.instagram.com/joannart_heart/'><img src="/svg/instagram.svg" alt="instagram" /></a>
         </div>
         <p>e-mail: <a href='mailto:daridebiec@gmail.com'>daridebiec@gmail.com</a></p>
       </section>
