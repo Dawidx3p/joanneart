@@ -1,8 +1,9 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react'
+import { useState } from 'react';
 import Navigation from '../components/Navigation';
-import styles from '../styles/Home.module.scss'
+import styles from '../styles/Home.module.scss';
+import Button from '@mui/material/Button';
 
 export default function Home() {
   const [title, setTitle] = useState('Blog')
@@ -21,12 +22,6 @@ export default function Home() {
         <Navigation active={'strona_glowna'}/>
         <img src="/logo.svg" alt="logo" id={styles.logo}/>
         <section className={styles.container}>
-          <div className={styles.description}>
-            <h1>{title}</h1>
-            <div className={styles.underline}></div>
-            <p>{description}</p>
-            {button && <Link href={button}>Zobacz</Link>}
-          </div>
           <div className={styles.sidenav}>
             <img src="/blog.jpg" alt="sugeruje odnośnik do bloga" className={title==='Blog' ? styles.active : ''} onClick={() => {
               setTitle('Blog');
@@ -69,6 +64,12 @@ export default function Home() {
               setImg('/pngs/moda.png');
               setButton(undefined);
             }}/>
+          </div>
+          <div className={styles.description}>
+            <h1>{title}</h1>
+            <div className={styles.underline}></div>
+            <p>{description}</p>
+            {button && <Link href={button}><Button variant="contained">Zobacz</Button></Link>}
           </div>
         </section>
         <img src={img} alt="tło"  className={styles.background}/>

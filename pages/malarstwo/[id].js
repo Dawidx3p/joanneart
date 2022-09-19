@@ -7,6 +7,7 @@ import Imgs from "../../components/Imgs";
 import CommentSection from "../../components/CommentSection";
 import { getLikes } from "../../utils/api";
 import Navigation from "../../components/Navigation";
+import { Button } from "@mui/material";
 
 function QuestionDetail() {
   const [userLikes, setLikes] = useState([]);
@@ -98,9 +99,10 @@ function QuestionDetail() {
         refreshUserLikes={refreshUserLikes}
         userLikes={userLikes}
       />
-      {/* {id && (
+      {id && (
         <div className={styles.share}>
-          <button
+          <Button
+          variant="contained"
             onClick={() =>
               navigator.share({
                 url:
@@ -109,9 +111,9 @@ function QuestionDetail() {
             }
           >
             Udostępnij
-          </button>
+          </Button>
         </div>
-      )} */}
+      )}
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -119,7 +120,8 @@ export default function ImageComments({
       <CommentForm id={id} refresh={refresh} />
       {id && (
         <div className={styles.share}>
-          <button
+          <Button
+          variant="contained"
             onClick={() =>
               navigator.share({
                 url:
@@ -128,7 +130,7 @@ export default function ImageComments({
             }
           >
             Udostępnij
-          </button>
+          </Button>
         </div>
       )}
     </div>

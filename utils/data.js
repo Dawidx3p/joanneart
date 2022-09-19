@@ -59,7 +59,7 @@ const data = {
     fotografia:[
         {
             id: 'pelna_zachwytu',
-            type: 'artystyczna',
+            type: 'Artystyczna',
             title: 'Pełna zachwytu',
             description: `Mimo, że tęsknię za wiosną, jestem dziś pełna zachwytu, pewnie ostatnim - 
             powrotem aury zimowej... Jeszcze tak wiele biel ma odcieni, jeszcze tak czyściej, 
@@ -72,7 +72,7 @@ const data = {
         },{
             id: 'slonce_ozywia',
             title: 'Słońce ożywia',
-            type: 'artystyczna',
+            type: 'Artystyczna',
             description: `Dzisiejsze, jeszcze mało wiosenne, 
             aczkolwiek ciekawe odkrycia z natury... Luty. Słońce ożywia zaspany świat, 
             ubarwia szarości, dodaje energii, magia... ziemi... w blasku`,
@@ -83,7 +83,7 @@ const data = {
         },{
             id: 'sesja_rodzinna',
             title: 'Sesja Rodzinna',
-            type: 'artystyczna',
+            type: 'Artystyczna',
             description: ` `,
             date: '12.02.2022',
             img: [["/fotografia/sesja_rodzinna/01.jpg","/fotografia/sesja_rodzinna/02.jpg","/fotografia/sesja_rodzinna/03.jpg","/fotografia/sesja_rodzinna/04.jpg"],["/fotografia/sesja_rodzinna/05.jpg","/fotografia/sesja_rodzinna/06.jpg","/fotografia/sesja_rodzinna/07.jpg"],["/fotografia/sesja_rodzinna/08.jpg","/fotografia/sesja_rodzinna/09.jpg","/fotografia/sesja_rodzinna/10.jpg","/fotografia/sesja_rodzinna/11.jpg"],["/fotografia/sesja_rodzinna/12.jpg","/fotografia/sesja_rodzinna/13.jpg","/fotografia/sesja_rodzinna/14.jpg"]],
@@ -92,7 +92,7 @@ const data = {
         },{
             id: 'styczniowe_inspiracje',
             title: 'Styczniowe inpiracje',
-            type: 'artystyczna',
+            type: 'Artystyczna',
             description: `Blask słońca między gałązkami drzew, na falującej tafli strumienia, rozświetlający zamglone wzgórza i szczyty drzew - 
             sens i światło życia`,
             date: '19.01.2022',
@@ -104,7 +104,7 @@ const data = {
     malarstwo:[
         {
             id: 'trex',
-            type: 'murale',
+            type: 'Murale',
             title: 'Tirex mural',
             description: `Dziś uszczęśliwiłam Kamilka i jego rodziców, malując mu w jego nowym pokoju wymarzonego Tirexa!
             Radość chłopca i to, jak dzielił się z rodzicami swoimi emocjami, gdy zobaczył efekt końcowy, były przepiękne, wzruszające. Dziękuję, że mogłam mu sprawić taką przyjemność...i sprawić, by poczuł, że to jego własny pokój...`,
@@ -113,7 +113,7 @@ const data = {
             url: '/malarstwo/trex'
         },{
             id: 'stylowy_kacik',
-            type: 'murale',
+            type: 'Murale',
             title: 'Stylowy kącik',
             description: `Liście, gałązki, kwiatowe kompozycje z natury - to mój pomysł na pomalowanie ściany i stworzenie stylowego kącika do pracy twórczej. Oj, musiałam się zająć znów malowaniem, żeby się oderwać od tego, co na zewnątrz...
             Bo maluję z serca, będąc blisko wnętrza, ciszy, dobrej, twórczej energii. Jak Wam się podoba - w odcieniach złota i zieleni? Murale dają przestrzeń i pole do tworzenia najpiękniejszych kompozycji z marzeń. Zapraszam ❤`,

@@ -4,6 +4,7 @@ import {Formik, Field, Form, ErrorMessage} from 'formik'
 import * as yup from 'yup'
 import styles from '../styles/Home.module.scss';
 import { createComment } from '../utils/api';
+import { Button } from '@mui/material';
 
 export default function CommentForm({id, refresh}){
     const [isSubmitting, setSubmitting] = useState(false);
@@ -45,7 +46,7 @@ export default function CommentForm({id, refresh}){
                     </ErrorMessage>
                     <label htmlFor='text'>Komentarz*</label>
                     <Field as="textarea" name="text" type="text" rows="5"/>
-                    <Field name="submit" type="submit" value="Komentuj" disabled={isSubmitting}/>
+                    <Button variant="contained" type="submit" disabled={isSubmitting}>Komentuj</Button>
                     {message}
                 </Form>
                 </>}
