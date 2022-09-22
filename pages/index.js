@@ -97,7 +97,7 @@ export default function Home() {
             {button && <Link href={button}><Button variant="contained">Zobacz</Button></Link>}
           </div>
         </section>
-        <img src={img} alt="tło"  className={styles.background}/>
+        {img.length ? <img src={img} alt="tło"  className={styles.background}/> : null}
       </main>
       
     </div>

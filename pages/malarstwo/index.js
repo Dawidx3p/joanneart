@@ -27,11 +27,10 @@ export default function Fotografia() {
           <p>kategoria: {category}</p>
           <CustomizedMenu options={['Murale']} changeCategory={(category) => setCategory(category)} />
         </div>
-        <Masonry mt={2} columns={2} spacing={2} sx={{ marginTop:'1rem', width: '55vw' }}>
+        <Masonry mt={2} columns={1} spacing={2} sx={{ marginTop:'1rem', width: '70vw' }}>
         {data.malarstwo.map((article, id) => <MediaCard 
         img={article.img}
         key={id} 
-        className={styles.article} 
         description={article.description}
         url={article.url}
         title={article.title} 

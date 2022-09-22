@@ -14,7 +14,7 @@ export default function MediaCard({title, description, url, date, img}) {
       component="img"
       height="140"
       image={img}
-      alt="green iguana"
+      alt={`image for ${title}`}
     />
     <CardContent>
       <Typography gutterBottom variant="h5" component="div">

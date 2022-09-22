@@ -26,7 +26,7 @@ export default function Fotografia() {
           <div className={styles.underline}></div>
           <p>Kategoria: {category}</p><CustomizedMenu options={['Artystyczna']} changeCategory={(category) => setCategory(category)} />
         </div>
-        <Masonry mt={2} columns={2} spacing={2} sx={{ marginTop:'1rem', width: '55vw' }}>
+        <Masonry mt={2} columns={1} spacing={2} sx={{ marginTop:'1rem', width: '70vw' }}>
         {data.fotografia.map((article, id) => <MediaCard 
         img={article.img[0][0]}
         key={id} 

@@ -49,16 +49,9 @@ function QuestionDetail() {
             </div>
             <section>
               {typeof article.img[0] === "object" &&
-                article.img.map((arr, id) => (
+                article.imgSmall.map((arr, id) => (
                   <Imgs key={id} arr={arr} id={id} article={article} />
                 ))}
-              {typeof article.imgSmall[0] === "object" &&
-                <section className={styles.mobileImgContainer}>
-                  {article.imgSmall.map((arr, id) => (
-                  <MobileImg key={id} arr={arr} id={id} article={article} />
-                ))}
-                </section>
-                }
             </section>
           </>
         )}

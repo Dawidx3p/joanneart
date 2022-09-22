@@ -17,16 +17,34 @@
       filter: brightness(1.1);
     }
     &.active{
-      width: 250px;
-      height: 250px;
+      width: 210px;
+      height: 210px;
     }
     &.goup{
       margin-top: -6rem;
     }
     &.activeGoup{
       margin-top: -6rem;
-      width: 250px;
-      height: 250px;
+      width: 210px;
+      height: 210px;
+    }
+    @media only screen and (max-width: 1200px) {
+      &{
+        width: 150px;
+        height: 150px;
+      }
+      &.active{
+        width: 170px;
+        height: 170px;
+      }
+      &.goup{
+        margin-top: -5rem;
+      }
+      &.activeGoup{
+        margin-top: -5rem;
+        width: 170px;
+        height: 170px;
+      }
     }
     @media only screen and (max-width: 800px) {
       &{
@@ -46,6 +64,7 @@
         height: 120px;
       }
     }
+    
   }
   .container2{
     grid-column-end: span 2;
@@ -70,7 +89,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 7vw;
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 900px) {
     &{
       grid-template-columns: 1fr;
       gap: 7vh;
@@ -91,6 +110,12 @@ main.homepage{
   #logo{
     width: 331px;
     margin-bottom: 2rem;
+    @media only screen and (max-width: 1400px) {
+      &{
+        margin-top: 6vh;
+        width: 250px;
+      }
+    }
     @media only screen and (max-width: 800px) {
       &{
         margin-top: 6vh;
@@ -108,8 +133,8 @@ main.homepage{
   position: absolute;
   bottom: 0;
   right: 0;
-  max-width: 30vw;
-  max-height: 50vh;
+  max-width: 20vw;
+  max-height: 40vh;
   object-fit: contain;
   object-position: left;
   z-index: -1;
@@ -132,6 +157,9 @@ main.homepage{
 
 .article{
   width: 60vw;
+  @media only screen and (max-width: 1000px) {
+    width: 80vh;
+  }
 }
 
 .fotografia {
@@ -159,7 +187,7 @@ main.homepage{
   grid-template-columns: repeat(2, 1fr);
   padding: 10vh 10vw;
   gap: 3rem;
-  @media only screen and (max-width: 1600px) {
+  @media only screen and (max-width: 1100px) {
     &{
       grid-template-columns: 1fr;
     }
@@ -237,23 +265,23 @@ main.homepage{
         }
       }
     }
-    @media only screen and (max-width: 800px) {
-      &{
-        display: none;
-      }
+  }
+  @media only screen and (max-width: 800px) {
+    &{
+      display: none;
     }
   }
 }
 
 .imgs3{
 display: grid;
-grid-column-end: span 4;
-grid-template-columns: repeat(3, 1fr);
+grid-column-end: span 3;
+grid-template-columns: repeat(2, 1fr);
 justify-items: center;
 }
 .imgs4{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
 }
 .mobileImgContainer{
@@ -584,6 +612,28 @@ justify-items: center;
   width: 100%;
   background-color: #fff;
   padding: 2rem;
+}
+
+.goup{
+  margin-top: -4rem;
+  @media only screen and (max-width: 650px) {
+    &{
+      margin-top: -2rem;
+    }
+  }
+}
+.imgs3{
+  @media only screen and (max-width: 1400px) {
+    & {
+      padding: 0 70px;
+    }
+  }
+  @media only screen and (max-width: 650px) {
+    & {
+      padding: 0 60px;
+    }
+  }
+  
 }
 
 @keyframes init{
