@@ -120,6 +120,46 @@ const data = {
             date: '5.03.2022',
             img: '/malarstwo/stylowy_kacik.jpg',
             url: '/malarstwo/stylowy_kacik'
+        },{
+            id: 'piotrus_pan',
+            type: 'Murale',
+            title: 'Historia Piotrusia Pana w szkole specjalnej w Złotej',
+            description: `Dziś skończyłam po 4-ech dniach malowania, w wolnych chwilach oczywiście po kilka godzin - mural baśniowy, tym razem zainspirowany historią Piotrusia Pana. Mural powstał w szkole specjalnej w Złotej i jest inspiracją oraz częścią większego projektu, przygotowywanego dla dzieci niepełnosprawnych,podopiecznych SOSW.
+
+            Tak symbolicznie chodzi o przekraczanie granic, tu: wyobraźni. Jestem dumna z efektu, zmęczona, ale szczęśliwa... mogę dawać radość swoją twórczością, "malować ten świat" - jak w mojej ulubionej piosence "na żółto i na niebiesko", czy czyjeś "życie, by świat się zarumienił..." Nie pięknie?
+            
+            Niech ten kolejny baśniowy obraz w szkole specjalnej rozświetla każdy dzień tym, którzy tu się uczą, będą uczyli i ich opiekunom,nauczycielom. I uszczęśliwia każdego.`,
+            date: '30.05.2021',
+            img: '/malarstwo/piotrus_pan.jpg',
+            url: '/malarstwo/piotrus_pan'
+        },{
+            id: 'basniowy_mural',
+            type: 'Murale',
+            title: 'Dla dzieci niepełnosprawnych w szkole specjalnej w Złotej (Małopolska)',
+            description: `Dla dzieciaków niepełnosprawnych w szkole specjalnej w Złotej (Małopolska) namalowałam mural baśniowy, nawiązujący do utworów Marii Konopnickiej, patronki Szkoły. Jak Wam się podoba? To była dla mnie kilkudniowa wspaniała przygoda z kolorami, postaciami, mgiełkami...`,
+            date: '6.01.2021',
+            img: '/malarstwo/basniowy_mural.jpg',
+            url: '/malarstwo/basniowy_mural'
+        },{
+            id: 'biblioteka_mural',
+            type: 'Murale',
+            title: 'Witam wszystkich bardzo serdecznie',
+            description: `Na tej stronie dzielę się swoją pasją, nieco inną niż wszystko, czym się zajmowałam zawodowo. Ale kocham tworzenie dla dzieci i malowanie dla nich cudownych, barwnych, bajkowych przestrzeni, rozwijających wyobraźnię i poczucie smaku, piękna, wrażliwości...
+
+            Tu projekt, jaki namalowałam w 2017 roku dla Miejskiej Biblioteki w Czchowie - kącik małego czytelnika.`,
+            date: '28.11.2020',
+            img: '/malarstwo/biblioteka_mural.jpg',
+            url: '/malarstwo/biblioteka_mural'
+        },{
+            id: 'baszta',
+            type: 'Obrazy',
+            title: 'Malowanie, ależ ja to kocham...',
+            description: `P. S. Wróciłam do malowania po wielu latach, bo praca mnie pochłonęła i niemal wchłonęła... Ale się w porę zorientowałam, że to nie moja droga, że chcę znów tworzyć, malować, pisać, fotografować, bo to mi sprawia ogromną frajdę.
+
+            I powstają niesamowite murale, pokoje stają się niepowtarzalne i nabierają stylu, spełniam marzenia. Jeśli ktoś jest zainteresowany, śmiało, proszę o kontakt na messengerze, tel. lub e-mailowo, lubię wyzwania i z przyjemnością stworzę znów coś fajnego.`,
+            date: '10.12.2021',
+            img: '/malarstwo/baszta.jpg',
+            url: '/malarstwo/baszta'
         }
         
     ]

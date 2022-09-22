@@ -1,7 +1,9 @@
-import { Button } from '@mui/material';
+import { Button, Stack } from '@mui/material';
 import Head from 'next/head';
 import Link from 'next/link';
+import Masonry from '@mui/lab/Masonry';
 import { useState } from 'react';
+import MediaCard from '../../components/Card';
 import CustomizedMenu from '../../components/CustomizedMenu';
 import Navigation from '../../components/Navigation';
 import styles from '../../styles/Home.module.scss';
@@ -25,12 +27,16 @@ export default function Fotografia() {
           <p>kategoria: {category}</p>
           <CustomizedMenu options={['Murale']} changeCategory={(category) => setCategory(category)} />
         </div>
-        {data.malarstwo.map((article, id) => <article key={id} className={styles.article}>
-          <h2>{article.title}</h2>
-          <p>{article.date}</p>
-          <p>{article.description}</p>
-          <Button variant="contained"><Link href={article.url}>Zobacz</Link></Button>
-        </article>)}
+        <Masonry mt={2} columns={2} spacing={2} sx={{ marginTop:'1rem', width: '55vw' }}>
+        {data.malarstwo.map((article, id) => <MediaCard 
+        img={article.img}
+        key={id} 
+        className={styles.article} 
+        description={article.description}
+        url={article.url}
+        title={article.title} 
+        date={article.date}/>)}
+        </Masonry>
       </section>
     </div>
   )

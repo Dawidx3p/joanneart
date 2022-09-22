@@ -24,12 +24,12 @@ export default function ImageComments({id, userLikes, refreshUserLikes}){
     const refresh = async () => {
         await getCommentsBySession(id).then((comments) => {
             if(comments){
-                setComments(comments)
+                return setComments(comments)
             }
         });
         await getLikesById(id).then((likes) => {
             if(likes && likes.length && likes[0].data && likes[0].data.likes){
-                setLikes(likes[0])
+                return setLikes(likes[0])
             }
         });
 };
