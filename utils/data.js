@@ -123,14 +123,6 @@ const data = {
             date: '30.02.2022',
             url: '/fotografia/artysta_mroz',
             imgSmall: divider2(createArray('/fotografia/artysta_mroz/', 8)),
-        },{
-            id: 'slonce_ozywia',
-            title: 'Artysta Mróz',
-            type: 'Artystyczna',
-            description: `Czemu nie przypomnieć? Fajny był ten malujący Artysta Mróz, i wszystko miało jakiś taki inny blask...kryształowy... A w tym roku mało bieli, puchu, śniegu, blasku kryształowych inspiracji...`,
-            date: '30.02.2022',
-            url: '/fotografia/artysta_mroz',
-            imgSmall: divider2(createArray('/fotografia/artysta_mroz/', 8)),
         }
     ],
     malarstwo:[
