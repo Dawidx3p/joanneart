@@ -10,7 +10,7 @@ import styles from '../../styles/Home.module.scss';
 import { data } from '../../utils/data';
 
 export default function Fotografia() {
-  const [category, setCategory] = useState('Artystyczna');
+  const [category, setCategory] = useState('Wszystkie');
   console.log(JSON.stringify(data.fotografia[0].img))
   return (
     <div className={styles.container}>
@@ -24,11 +24,16 @@ export default function Fotografia() {
         <div className={styles.description}>
           <h1>Fotografia</h1>
           <div className={styles.underline}></div>
-          <p>Kategoria: {category}</p><CustomizedMenu options={['Artystyczna']} changeCategory={(category) => setCategory(category)} />
+          <p>Kategoria: {category}</p><CustomizedMenu options={['Wszystkie', 'Artystyczna', 'Sesje zdjęciowe']} changeCategory={(category) => setCategory(category)} />
         </div>
         <Masonry mt={2} columns={1} spacing={2} sx={{ marginTop:'1rem', width: '70vw' }}>
-        {data.fotografia.map((article, id) => <MediaCard 
-        img={article.img[0][0]}
+        {data.fotografia.filter(article => {
+          if(category === 'Wszystkie'){
+            return article
+          }
+          return article.type===category
+        }).map((article, id) => <MediaCard 
+        img={article.imgSmall[0][0]}
         key={id} 
         className={styles.article} 
         description={article.description}

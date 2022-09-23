@@ -10,7 +10,7 @@ import styles from '../../styles/Home.module.scss';
 import { data } from '../../utils/data';
 
 export default function Fotografia() {
-  const [category, setCategory] = useState('Murale');
+  const [category, setCategory] = useState('Wszystkie');
   console.log(JSON.stringify(data.fotografia[0].img))
   return (
     <div className={styles.container}>
@@ -25,10 +25,15 @@ export default function Fotografia() {
           <h1>Malarstwo</h1>
           <div className={styles.underline}></div>
           <p>kategoria: {category}</p>
-          <CustomizedMenu options={['Murale']} changeCategory={(category) => setCategory(category)} />
+          <CustomizedMenu options={['Wszystkie', 'Murale', 'Obrazy', 'Anioły']} changeCategory={(category) => setCategory(category)} />
         </div>
         <Masonry mt={2} columns={1} spacing={2} sx={{ marginTop:'1rem', width: '70vw' }}>
-        {data.malarstwo.map((article, id) => <MediaCard 
+        {data.malarstwo.filter(article => {
+          if(category === 'Wszystkie'){
+            return article
+          }
+          return article.type===category
+        }).map((article, id) => <MediaCard 
         img={article.img}
         key={id} 
         description={article.description}

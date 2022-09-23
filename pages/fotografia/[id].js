@@ -48,7 +48,7 @@ function QuestionDetail() {
               </div>
             </div>
             <section>
-              {typeof article.img[0] === "object" &&
+              {typeof article.imgSmall[0] === "object" &&
                 article.imgSmall.map((arr, id) => (
                   <Imgs key={id} arr={arr} id={id} article={article} />
                 ))}
