@@ -1,38 +1,38 @@
-const createComment = async (comment) => fetch('/.netlify/functions/createComment', {
+const createComment = async (comment) => fetch('/api/createComment', {
     body: JSON.stringify(comment),
     method: 'POST'
   })
 .then(response => response.json())
 .catch((error) => console.error(error));
 
-const getCommentsBySession = async (id) => fetch(`/.netlify/functions/commentsBySession`, {
+const getCommentsBySession = async (id) => fetch(`/api/commentsBySession`, {
   body: JSON.stringify(id),
   method: 'POST'
 })
 .then(response => response.json())
 .catch((error) => console.error(error));
 
-const createLike = async (id) => fetch('/.netlify/functions/createLike', {
+const createLike = async (id) => fetch('/api/createLike', {
   body: JSON.stringify({data: {id: id, likes: 1}}),
   method: 'POST'
 })
 .then(response => response.json())
 .catch((error) => console.error(error));
 
-const getLikesById = async (id) => fetch(`/.netlify/functions/likesById`, {
+const getLikesById = async (id) => fetch(`/api/likesById`, {
   body: JSON.stringify(id),
   method: 'POST'
 })
 .then(response => response.json())
 .catch((error) => console.error(error));
 
-const likeIt = async (comment) => fetch(`/.netlify/functions/updateComment/${comment.ref['@ref'].id}`, {
+const likeIt = async (comment) => fetch(`/api/updateComment/${comment.ref['@ref'].id}`, {
   body: JSON.stringify({...comment, data: {...comment.data, likes: comment.data.likes+1}}),
   method: 'POST'
 })
 .then(response => response.json());
 
-const likeImage = async (like) => fetch(`/.netlify/functions/updateLikes/${like.ref['@ref'].id}`, {
+const likeImage = async (like) => fetch(`/api/updateLikes/${like.ref['@ref'].id}`, {
   body: JSON.stringify({...like, data: {...like.data, likes: like.data.likes+1}}),
   method: 'POST'
 })
