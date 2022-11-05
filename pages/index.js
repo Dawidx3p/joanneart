@@ -95,7 +95,6 @@ export default function Home() {
             <div className={styles.underline}></div>
             <p>{description}</p>
             {button && <Link href={button}><Button variant="contained">Zobacz</Button></Link>}
-            <button onClick={() => console.log(process.env.REACT_APP_FAUNADB_ADMIN_SECRET)}></button>
           </div>
         </section>
         {img.length ? <img src={img} alt="tło"  className={styles.background}/> : null}

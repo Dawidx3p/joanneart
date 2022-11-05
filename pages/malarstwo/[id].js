@@ -43,7 +43,6 @@ function QuestionDetail() {
       }
       id++;
     }
-    console.log("data from divider:", JSON.stringify(arrayOfImgs));
     return arrayOfImgs;
   };
   if (article && article.img) {

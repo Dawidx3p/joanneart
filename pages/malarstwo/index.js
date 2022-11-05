@@ -11,7 +11,6 @@ import { data } from '../../utils/data';
 
 export default function Fotografia() {
   const [category, setCategory] = useState('Wszystkie');
-  console.log(JSON.stringify(data.fotografia[0].img))
   return (
     <div className={styles.container}>
       <Head>

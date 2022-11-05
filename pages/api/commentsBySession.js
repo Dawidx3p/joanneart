@@ -9,7 +9,7 @@ export default function handler(
   const client = new faunadb.Client({
     secret: process.env.REACT_APP_FAUNADB_ADMIN_SECRET
   }) 
-  const sessionId = JSON.parse(request.body);
+  const sessionId = request.body;
   console.log(sessionId);
 
   return client.query(q.Paginate(q.Match(q.Index('comments_by_id'), sessionId)))

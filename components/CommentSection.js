@@ -16,8 +16,8 @@ export default function ImageComments({id, userLikes, refreshUserLikes}){
             }
         });
         getLikesById(id).then((likes) => {
-            if(likes && likes.length && likes[0].data && likes[0].data.likes){
-                setLikes(likes[0])
+            if(likes){
+                setLikes(likes)
             }
         });
     }, [])  
@@ -28,8 +28,8 @@ export default function ImageComments({id, userLikes, refreshUserLikes}){
             }
         });
         await getLikesById(id).then((likes) => {
-            if(likes && likes.length && likes[0].data && likes[0].data.likes){
-                return setLikes(likes[0])
+            if(likes){
+                return setLikes(likes)
             }
         });
 };

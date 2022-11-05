@@ -22,7 +22,6 @@ export const divider = (arr) => {
             num = num;
         }
     }
-    console.log('data from divider:' ,JSON.stringify(arrayOfImgs));
     return arrayOfImgs
   }
 
@@ -47,6 +46,5 @@ export const divider = (arr) => {
             num = num;
         }
     }
-    console.log('data from divider2:' ,JSON.stringify(arrayOfImgs));
     return arrayOfImgs
   }

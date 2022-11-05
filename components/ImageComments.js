@@ -26,27 +26,23 @@ export default function ImageComments({
   const [message, setMessage] = useState("");
   useEffect(() => {
     getCommentsBySession(id).then((comments) => {
+      console.log(comments);
       if (comments) {
         setComments(comments);
       }
     });
     getLikesById(id).then((likes) => {
-      if (likes && likes.length && likes[0].data && likes[0].data.likes) {
-        setLikes(likes[0]);
+      if (likes) {
+        setLikes(likes);
       }
     });
   }, []);
-  const refresh = async () => {
-    await getCommentsBySession(id).then((comments) => {
-      if (comments) {
-        setComments(comments);
-      }
-    });
-    await getLikesById(id).then((likes) => {
-      if (likes && likes.length && likes[0].data && likes[0].data.likes) {
-        setLikes(likes[0]);
-      }
-    });
+  const refresh = () => {
+    Promise.all([getCommentsBySession(id), getLikesById(id)]).then((values) => {
+      console.log(values);
+      setComments(values[0]);
+      setLikes(values[1]);
+    })
   };
   return (
     <div className={styles.ImageComments}>
@@ -63,6 +59,7 @@ export default function ImageComments({
             addLikeToCache([...userLikes, id]).then(refreshUserLikes());
             if (!likes) {
               return createLike(id).then((like) => {
+                console.log(like);
                 if (like) {
                   setLikes(like);
                 }

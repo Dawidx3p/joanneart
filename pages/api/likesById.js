@@ -2,17 +2,19 @@
 const faunadb = require('faunadb')
 const q = faunadb.query
 
-exports.handler = (event, context) => {
-  /* configure faunaDB Client with our secret */
+export default function handler(
+  request,
+  response
+) {
   const client = new faunadb.Client({
     secret: process.env.REACT_APP_FAUNADB_ADMIN_SECRET
   }) 
-  const sessionId = JSON.parse(event.body);
+  const sessionId = request.body;
   console.log(sessionId);
 
   return client.query(q.Paginate(q.Match(q.Index('likes_by_id'), sessionId)))
-    .then((response) => {
-      const refs = response.data
+    .then((resp) => {
+      const refs = resp.data
       console.log('likes refs', refs)
       console.log(`${refs.length} likes found`)
       // create new query out of todo refs. http://bit.ly/2LG3MLg
@@ -21,16 +23,19 @@ exports.handler = (event, context) => {
       })
       // then query the refs
       return client.query(getAllDataQuery).then((ret) => {
-        return {
-          statusCode: 200,
-          body: JSON.stringify(ret)
-        }
+        response.status(200).json({
+          body: ret,
+          query: request.query,
+          cookies: request.cookies,
+        });
       })
     }).catch((error) => {
       console.log('error', error)
-      return {
-        statusCode: 400,
-        body: JSON.stringify(error)
-      }
+      response.status(400).json({
+          body: error,
+          query: request.query,
+          cookies: request.cookies,
+        });
     })
+  
 }
