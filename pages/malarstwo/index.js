@@ -8,17 +8,20 @@ import CustomizedMenu from '../../components/CustomizedMenu';
 import Navigation from '../../components/Navigation';
 import styles from '../../styles/Home.module.scss';
 import { data } from '../../utils/data';
+import ResponsiveAppBar from '../../components/MUI/AppBar';
 
 export default function Fotografia() {
   const [category, setCategory] = useState('Wszystkie');
   return (
+    <>
+    <ResponsiveAppBar />
     <div className={styles.container}>
       <Head>
         <title>Malarstwo Joanneart</title>
         <meta name="description" content="Strona na której dziele się z innymi swoją pasją" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigation active={'malarstwo'}/>
+      <div className={styles.background1}></div>
       <section className={styles.fotografia}>
         <div className={styles.description}>
           <h1>Malarstwo</h1>
@@ -42,5 +45,6 @@ export default function Fotografia() {
         </Masonry>
       </section>
     </div>
+    </>
   )
 }

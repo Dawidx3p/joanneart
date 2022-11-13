@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function MyApp({ Component, pageProps }) {
@@ -9,8 +9,8 @@ function MyApp({ Component, pageProps }) {
     palette: {
       primary: {
         light: "#757ce8",
-        main: "#303030",
-        dark: "#222",
+        main: "#C2508F",
+        dark: "#a23872",
         contrastText: "#fff",
       },
       secondary: {

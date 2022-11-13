@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { data } from "../../utils/data";
+import { data, lastPosts } from "../../utils/data";
 import Head from "next/head";
 import styles from "../../styles/Home.module.scss";
 import { useEffect, useMemo, useState } from "react";
@@ -8,14 +8,22 @@ import CommentSection from "../../components/CommentSection";
 import { getLikes } from "../../utils/api";
 import MobileImg from "../../components/MobileImg";
 import Navigation from "../../components/Navigation";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
+import ResponsiveAppBar from "../../components/MUI/AppBar";
+import Masonry from "@mui/lab/Masonry";
+import Link from "next/link";
+import Gallery from "../../components/Gallery/Gallery";
+import { Container } from "@mui/system";
+import NewPostsRow from "../../components/MUI/NewPostsRow";
 
 function QuestionDetail() {
+  const [galleryOpener, setGalleryOpener] = useState(false);
+  const [clicked, setClicked] = useState();
   const [userLikes, setLikes] = useState([]);
   const router = useRouter();
   const { id } = router.query;
   const article = useMemo(
-    () => data.fotografia.find((obj) => obj.id === id),
+    () => data.find((obj) => obj.id === id),
     [id]
   );
   const refreshUserLikes = async () =>
@@ -29,6 +37,7 @@ function QuestionDetail() {
   }, []);
   return (
     <>
+    <ResponsiveAppBar />
       {article && article.title && article.description && (
         <Head>
           <title>{article.title}</title>
@@ -36,7 +45,7 @@ function QuestionDetail() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
       )}
-      <Navigation active={'fotografia'}/>
+      {galleryOpener ? <Gallery clicked={clicked} gallery={article.imgSmall} close={() => setGalleryOpener(false)}/> : null}
       <main className={styles.photoArticle}>
         {article && article.title && article.description && (
           <>
@@ -47,15 +56,16 @@ function QuestionDetail() {
                 <p>{article.description}</p>
               </div>
             </div>
-            <section>
-              {typeof article.imgSmall[0] === "object" &&
-                article.imgSmall.map((arr, id) => (
-                  <Imgs key={id} arr={arr} id={id} article={article} />
-                ))}
-            </section>
+            <Masonry>
+              {article.imgSmall.map((url, id) => <img onClick={() => {
+                setClicked(url);
+                setGalleryOpener(true);
+              }} key={id} src={url} />)}
+            </Masonry>
           </>
         )}
       </main>
+      <Container>
       <CommentSection
         id={id}
         refreshUserLikes={refreshUserLikes}
@@ -76,6 +86,11 @@ function QuestionDetail() {
           </Button>
         </div>
       )}
+      </Container>
+      <Container>
+        <Typography variant="h5" sx={{marginTop: '1rem'}} gutterBottom>Najnowsze posty</Typography>
+        <NewPostsRow images={lastPosts}/>
+      </Container>
     </>
   );
 }

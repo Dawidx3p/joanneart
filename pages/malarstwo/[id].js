@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { data } from "../../utils/data";
+import { data, lastPosts } from "../../utils/data";
 import Head from "next/head";
 import styles from "../../styles/Home.module.scss";
 import { useEffect, useMemo, useState } from "react";
@@ -7,14 +7,16 @@ import Imgs from "../../components/Imgs";
 import CommentSection from "../../components/CommentSection";
 import { getLikes } from "../../utils/api";
 import Navigation from "../../components/Navigation";
-import { Button } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
+import ResponsiveAppBar from "../../components/MUI/AppBar";
+import NewPostsRow from "../../components/MUI/NewPostsRow";
 
 function QuestionDetail() {
   const [userLikes, setLikes] = useState([]);
   const router = useRouter();
   const { id } = router.query;
   const article = useMemo(
-    () => data.malarstwo.find((obj) => obj.id === id),
+    () => data.find((obj) => obj.id === id),
     [id]
   );
   const divider = (arr) => {
@@ -59,6 +61,7 @@ function QuestionDetail() {
   }, []);
   return (
     <>
+    <ResponsiveAppBar />
       {article && article.title && article.description && (
         <Head>
           <title>{article.title}</title>
@@ -66,7 +69,6 @@ function QuestionDetail() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
       )}
-      <Navigation active={'malarstwo'}/>
       <main className={styles.photoArticle}>
         {article && article.title && article.description && (
           <>
@@ -93,6 +95,7 @@ function QuestionDetail() {
           </>
         )}
       </main>
+      <Container>
       <CommentSection
         id={id}
         refreshUserLikes={refreshUserLikes}
@@ -113,6 +116,11 @@ function QuestionDetail() {
           </Button>
         </div>
       )}
+      </Container>
+      <Container>
+        <Typography variant="h5" sx={{marginTop: '1rem'}} gutterBottom>Najnowsze posty</Typography>
+        <NewPostsRow images={lastPosts}/>
+      </Container>
     </>
   );
 }

@@ -1,18 +1,20 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import ResponsiveAppBar from '../../components/MUI/AppBar';
 import Navigation from '../../components/Navigation';
 import styles from '../../styles/Home.module.scss';
 
 export default function Kontakt() {
   const [category, setCategory] = useState('Murale');
   return (
+    <>
+    <ResponsiveAppBar />
     <div className={styles.containerContact}>
       <Head>
         <title>Joanneart Kontakt</title>
         <meta name="description" content="Strona na której dziele się z innymi swoją pasją" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigation active={'kontakt'}/>
       <section className={styles.profile}>
         <img src="/profile.png" alt="Profile" />
         <p>Jest we mnie piękna, ciekawa świata istota o bogatej wyobraźni, która swoim uśmiechem i magią rąk sprawia, że świat nabiera barw...a ja ją biorę z miłością za rękę i malujemy, fotografujemy, sprawiając radość i zmieniając świat.</p>
@@ -24,7 +26,9 @@ export default function Kontakt() {
             <a target="_blank" rel="noopener noreferrer" href='https://www.instagram.com/joannart_heart/'><img src="/svg/instagram.svg" alt="instagram" /></a>
         </div>
         <p>e-mail: <a href='mailto:daridebiec@gmail.com'>daridebiec@gmail.com</a></p>
+        <p>Tel. <a href='tel:+48784456794'>784456794</a></p>
       </section>
     </div>
+    </>
   )
 }

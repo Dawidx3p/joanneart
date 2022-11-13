@@ -21,7 +21,7 @@ export default function MediaCard({title, description, url, date, img}) {
         {title}
       </Typography>
       <Typography variant="body2" color="text.secondary">
-        {date}
+        {new Date(date).toLocaleDateString()}
       </Typography>
       <Typography variant="body2" color="text.secondary">
         {description}
